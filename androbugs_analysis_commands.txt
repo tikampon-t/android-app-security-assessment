@@ -1,0 +1,51 @@
+sudo apt update && sudo apt upgrade -y
+cat /etc/os-release
+
+sudo apt install htop
+htop
+
+sudo apt install -y virtualbox-guest-utils virtualbox-guest-x11
+reboot
+
+sudo su
+sudo -i
+
+sudo apt install git python3 -y
+sudo apt install python3 python3-pip -y
+
+git clone https://github.com/AndroBugs/AndroBugs_Framework.git
+cd AndroBugs_Framework
+
+# MorProm (หมอพร้อม)
+python3 androbugs.py -f ~/Desktop/morprom.apk
+python3 androbugs.py -f ~/home/nemophila/Downloads/morprom/com.mor.proplus.apk
+python2 androbugs.py -f /home/nemophila/Downloads/morprom/com.mor.promplus.apk
+
+sudo apt install 2to3
+
+cd ~/Downloads
+unzip ThaiID.zip
+cd ~/Downloads/ThaiID
+
+sudo apt install libreoffice -y
+
+libreoffice --headless --convert-to pdf th.go.dopa.bora.dims.ddopa_a28c17f.txt
+mv th.go.dopa.bora.dims.ddopa_a28c17f*.txt report.txt
+
+ls -1 *.txt
+cat th.go.dopa.bora.dims.ddopa_*.txt
+
+# ThaiID
+python2 ~/AndroBugs_Framework/androbugs.py -f ./th.go.dopa.bora.dims.ddopa.apk
+python2 androbugs.py -f /home/nemophila/Downloads/ThaiID/th.go.dopa.bora.dims.ddopa.apk
+
+mv th.go.dopa.bora.dims.ddopa_*.txt report.txt
+libreoffice --headless --convert-to pdf report.txt
+
+# Student Loan Fund Connect (กยศ)
+python2 androbugs.py -f /home/nemophila/Downloads/student-loan-connect.apk
+
+# Amazing Thailand
+python2 ../AndroBugs_Framework-master/androbugs.py -f AmazingThailand.apk -o report_folder
+ls AmazingThailand.apk
+python2 ../AndroBugs_Framework-master/androbugs.py -f AmazingThailand.x.apk -o Reports
